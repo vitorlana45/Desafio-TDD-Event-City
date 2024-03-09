@@ -1,15 +1,10 @@
 package com.devsuperior.demo.controllers;
 
 import com.devsuperior.demo.dto.CityDTO;
-<<<<<<< HEAD
-import com.devsuperior.demo.services.CityService;
-import org.springframework.beans.factory.annotation.Autowired;
-=======
 import com.devsuperior.demo.entities.City;
+import com.devsuperior.demo.repositories.CityRepository;
 import com.devsuperior.demo.services.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
->>>>>>> origin/main
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -23,6 +18,8 @@ public class CityController {
 
     @Autowired
     private CityService service;
+    @Autowired
+    private CityRepository cityRepository;
 
     @GetMapping
     public ResponseEntity<List<CityDTO>> findAll() {
@@ -38,5 +35,9 @@ public class CityController {
         return ResponseEntity.created(uri).body(cityDTO);
     }
 
-
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<CityDTO> deleteById(@PathVariable Long id) {
+        service.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }
