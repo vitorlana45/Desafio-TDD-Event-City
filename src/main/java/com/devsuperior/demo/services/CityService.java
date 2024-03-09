@@ -48,7 +48,7 @@ public class CityService {
         try {
             repository.deleteById(id);
         } catch (DataIntegrityViolationException | IllegalStateException e) {
-            throw new DatabaseException("falha de integridade de referencia!");
+            throw new DatabaseException("falha de integridade referencial!");
         }
     }
 
