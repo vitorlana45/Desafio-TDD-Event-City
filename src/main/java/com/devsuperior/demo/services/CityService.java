@@ -24,6 +24,7 @@ public class CityService {
 
     @Transactional
     public CityDTO insert(CityDTO cityDTO) {
+<<<<<<< HEAD
         City city = convertToCityDTO(cityDTO);
         City dto = repository.save(city);
         return new CityDTO(dto);
@@ -31,9 +32,22 @@ public class CityService {
 
 
     private City convertToCityDTO(CityDTO cityDTO) {
+=======
+        City city = convertToCity(cityDTO);
+        City createdCity = repository.save(city);
+        return new CityDTO(createdCity);
+    }
+
+
+    private City convertToCity(CityDTO cityDTO) {
+>>>>>>> origin/main
         City city = new City();
         city.setName(cityDTO.getName());
         return city;
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 }

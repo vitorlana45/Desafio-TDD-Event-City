@@ -1,8 +1,15 @@
 package com.devsuperior.demo.controllers;
 
 import com.devsuperior.demo.dto.CityDTO;
+<<<<<<< HEAD
 import com.devsuperior.demo.services.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
+=======
+import com.devsuperior.demo.entities.City;
+import com.devsuperior.demo.services.CityService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+>>>>>>> origin/main
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
